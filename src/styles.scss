@@ -1,0 +1,522 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,700|Ubuntu+Mono|Droid+Sans:400,700&subset=latin,latin-ext);
+@import "sass/inc/_colors";
+@import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap';
+@import '../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables';
+@import "sass/inc/_vars";
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+
+}
+
+body {
+  font-family: $font-opensans;
+  line-height: 1.6;
+  font-size: 16px;
+  background: $content-bg;
+  color: #848484;
+  font-weight: 300;
+  overflow-x:hidden;
+
+}
+
+a {
+  color: $brand-primary;
+  &:hover {
+    text-decoration:none;
+    color: $brand-primary;
+
+  }
+}
+
+p, ul, ol {
+  margin-bottom: 1.5em;
+  font-size: 16px;
+  color: $brand-lighter;
+  font-family: $font-opensans;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $brand-darker;
+  font-family: $font-opensans;
+  font-weight: 400;
+  margin: 0 0 30px 0;
+
+}
+
+figure {
+  margin-bottom: 2em;
+
+}
+
+::-webkit-selection {
+  color: $brand-body-color;
+  background: $brand-selection-color;
+
+}
+
+::-moz-selection {
+  color: $brand-body-color;
+  background: $brand-selection-color;
+
+}
+
+::selection {
+  color: $brand-body-color;
+  background: $brand-selection-color;
+
+}
+
+#fapp-header {
+  position:relative;
+  margin-bottom: 0;
+  z-index: 9999999;
+
+}
+
+.stuck {
+  position: fixed !important;
+  top: 0 !important;
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  -ms-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  -o-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05);
+
+}
+
+.header-top {
+  padding: 10px 0;
+  background: $brand-primary;
+  .fapp-link {
+
+    a {
+      margin-left: 10px;
+      font-size: 13px;
+
+    }
+    @media screen and (max-width: $screen-sm)
+
+    {
+      text-align:center;
+    }
+
+  }
+}
+
+.nav-wrapper {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: block;
+    text-align: center;
+    background: $brand-primary;
+    li {
+      display: inline-block;
+      padding: 20px 30px;
+      color: $brand-white;
+      &:hover {
+        background: $dutch;
+      }
+      a {
+        color: $brand-white;
+      }
+    }
+  }
+}
+
+.fapp-cover,
+.fapp-hero {
+  position:relative;
+  height: 800px;
+  @media screen and (max-width: $screen-sm)
+
+  {
+    height: 700px;
+
+  }
+
+  .fapp-overlay {
+    position: absolute !important;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+
+  }
+}
+
+.btn:hover, .btn:active, .btn:focus {
+  border: 1px solid transparent;
+}
+
+.fapp-cover {
+  background-size:cover;
+  position:relative;
+  @media screen and (max-width: $screen-sm)
+
+  {
+    height:inherit;
+    padding: 3em 0;
+
+  }
+  .btn {
+    padding: 1em 2em;
+    opacity: .9;
+
+  }
+  &.fapp-cover_2 {
+    height: 600px;
+    @media screen and (max-width: $screen-sm)
+
+    {
+      height:inherit;
+      padding: 3em 0;
+
+    }
+
+  }
+
+  .desc {
+    top: 30%;
+    position:absolute;
+    width: 100%;
+    z-index: 2;
+    margin-left: -100px;
+
+    @media screen and (max-width: $screen-sm)
+    {
+      padding-left: 15px;
+      padding-right: 15px;
+
+    }
+    h2 {
+      font-size: 60px;
+      margin-bottom: 10px;
+      font-weight: 400 !important;
+      @media screen and (max-width: $screen-sm)
+
+      {
+        font-size: 40px;
+
+      }
+    }
+    p {
+      display:block;
+      margin-bottom: 30px;
+      font-size: 16px;
+
+    }
+
+    .desc2 {
+      @media screen
+
+      and
+      (
+        max-width: $screen-sm) {
+        display:none;
+
+      }
+    }
+  }
+}
+
+#fapp-header-section {
+  padding: 0;
+  position:relative;
+  left: 0;
+  width: 100%;
+  z-index: 1022;
+  background: $brand-white;
+
+}
+
+.nav-header {
+
+  position:relative;
+  width: 100%;
+
+}
+
+app-customer-list {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: $lightgray;
+}
+.customer-switcher {
+  margin: 10px 0;
+  text-align:right;
+
+}
+#fapp-logo {
+  position:relative;
+  z-index: 2;
+  font-size: 28px;
+  text-transform:uppercase;
+  margin-top: 30px;
+  font-weight: 700;
+  i {
+    position:absolute;
+    top: 0;
+    left: 0;
+    font-size: 16px;
+    color: $brand-primary;
+    background: rgba($brand-black, .06);
+    padding: 10px;
+    @include border-radius(50%);
+
+  }
+
+  a {
+    color: $brand-primary;
+    &:hover, &:focus {
+      color: $brand-primary;
+
+    }
+  }
+
+}
+
+.tabulation {
+  width: 100%;
+  float:left;
+  margin-top: -7em;
+  background: rgba($brand-white, .95);
+  -webkit-box-shadow: 0px 43px 83px -20px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 0px 43px 83px -20px rgba(0, 0, 0, 0.41);
+  -ms-box-shadow: 0px 43px 83px -20px rgba(0, 0, 0, 0.41);
+  -o-box-shadow: 0px 43px 83px -20px rgba(0, 0, 0, 0.41);
+  box-shadow: 0px 43px 83px -20px rgba(0, 0, 0, 0.41);
+  label {
+    color: rgba($brand-black, .5);
+    font-size: 14px;
+    @media screen
+    and(max-width: $screen-xs) {
+      width: 40%;
+
+    }
+
+  }
+  input[type="text"] {
+    background: rgba(0, 0, 0, .05);
+    border:none;
+    box-shadow:none;
+    font-weight:bold;
+    font-size: 14px;
+    padding: 5px 10px !important;
+    @include border-radius(0);
+    color: $brand-primary;
+    @media screen
+
+    and
+    (
+      max-width: $screen-xs) {
+      width: 55%;
+      float:right;
+
+    }
+  }
+}
+
+.tab-content {
+  padding: 30px;
+  .btn {
+    border: 1px solid red !important;
+
+  }
+}
+
+.nav-tabs {
+  border:none;
+  a {
+    border: none !important;
+    font-weight:bold;
+    padding: 15px 20px !important;
+    @include border-radius(0);
+    @media screen and (max-width: $screen-sm)
+    {
+      font-weight:normal;
+      font-size: 13px;
+      padding: 15px 10px !important;
+
+    }
+
+  }
+  .active {
+    a {
+      border: none !important;
+      background: $brand-primary !important;
+      color: $brand-white !important;
+      font-weight:bold;
+      @include border-radius(0);
+
+    }
+  }
+  &:hover, &:focus {
+    a {
+      border: none !important;
+      @include border-radius(0);
+
+    }
+  }
+}
+
+.mt {
+  margin-bottom: 20px;
+
+}
+#fapp-tours,
+.fapp-content-section {
+  padding: 3em 0;
+  @media screen and (max-width: $screen-sm)
+
+  {
+    padding: 3em 0;
+
+  }
+
+}
+
+.fapp-section-gray {
+  background: rgba($brand-black, .04);
+
+}
+
+.heading-section {
+  padding-bottom: 1em;
+  margin-bottom: 5em;
+  &:after {
+    position:absolute;
+    content: '';
+    bottom: 0;
+    left: 50%;
+    width: 100px;
+    margin-left: -50px;
+    height: 2px;
+    background: $brand-primary;
+
+  }
+
+  h3 {
+    font-size: 40px;
+    font-weight: 400;
+    position:relative;
+
+  }
+  p {
+    font-size: 20px;
+
+  }
+}
+
+.heading-title {
+  font-size: 40px;
+  margin-bottom: 1.5em;
+
+}
+
+// Map
+#map {
+  width: 100%;
+  height: 800px;
+  position:relative;
+  @media screen and (max-width: $screen-sm)
+
+  {
+    height: 200px;
+
+  }
+}
+
+.fapp-social-icons {
+  > a {
+    padding: 4px 10px;
+    color: $brand-primary;
+    i {
+      font-size: 26px;
+
+    }
+    &:hover, &:focus, &:active {
+      text-decoration:none;
+      color: $brand-darker;
+
+    }
+
+  }
+}
+
+#footer {
+  background: #393e46;
+  padding: 20px 0 0 0;
+  text-align:center;
+  color: rgba($brand-white, .7);
+  font-size: 14px;
+
+}
+
+.btn {
+  text-transform:uppercase;
+  letter-spacing: 1px;
+  @include transition(.3s);
+  &.btn-primary {
+    background: $brand-primary;
+    color: $brand-white;
+    border: none !important;
+    border: 2px solid transparent !important;
+    &:hover, &:active, &:focus {
+      box-shadow:none;
+      background: $brand-primary;
+      color: $brand-white !important;
+
+    }
+
+  }
+  &:hover, &:active, &:focus {
+    background: #393e46 !important;
+    color: $brand-white;
+    outline: none !important;
+
+  }
+  &.btn-default {
+    &:hover, &:focus, &:active {
+      border-color:transparent;
+
+    }
+  }
+  &.btn-outline {
+    background:transparent;
+    color: $brand-primary;
+    border: 2px solid $brand-primary !important;
+    &:hover, &:focus, &:active {
+      background: $brand-primary !important;
+      color: $brand-white !important;
+
+    }
+  }
+}
+
+.tab-content {
+  .btn {
+    letter-spacing: 0;
+    text-transform:none;
+    font-weight:bold;
+    font-size: 18px;
+
+  }
+}
+
+#fapp-wrapper {
+  overflow-x:hidden;
+  position:relative;
+
+}
