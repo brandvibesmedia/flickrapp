@@ -1,3 +1,41 @@
-<h1>
-  {{title}}
-</h1>
+<md-sidenav-layout>
+
+    <md-sidenav #sidenav mode="side" class="app-sidenav">
+        <md-list>
+            <a md-list-item href="http://flickr.com/" target="_blank">Flickr</a>
+            <a md-list-item href="https://www.nasa.gov/" target="_blank">NASA</a>
+            <a md-list-item href="https://www.flickr.com/photos/nasahqphoto/" target="_blank">Flickr NASA</a>
+        </md-list>
+    </md-sidenav>
+
+    <md-toolbar color="primary">
+        <button class="app-icon-button" (click)="sidenav.toggle()">
+            <i class="material-icons app-toolbar-menu">menu</i>
+        </button>
+
+        {{title}}
+
+        <span class="app-toolbar-filler"></span>
+        <md-input placeholder="Search by title" [(ngModel)]="photosFilter.title" [value]="photosFilter.title">
+        <span md-prefix>
+          <i class="material-icons app-input-icon">search</i>
+          &nbsp;
+        </span>
+        </md-input>
+    </md-toolbar>
+
+    <div class="app-content">
+        <md-card class="example-card clearfix" *ngFor="let photo of photos | filterBy: photosFilter">
+            <img md-card-image [src]="photo.url">
+            <md-card-header>
+                <md-card-title>{{photo.title}}</md-card-title>
+                <md-card-subtitle *ngIf="photo.details">Taken {{photo.details.dates.taken | date: 'medium'}}</md-card-subtitle>
+            </md-card-header>
+            <md-card-content>
+                <p *ngIf="photo.details" [innerHTML]="photo.details.description._content"></p>
+            </md-card-content>
+        </md-card>
+
+    </div>
+
+</md-sidenav-layout>
