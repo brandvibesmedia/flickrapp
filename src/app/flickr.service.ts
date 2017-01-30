@@ -6,7 +6,6 @@ import "rxjs/add/operator/map";
 
 @Injectable()
 export class FlickrService {
-
   constructor(private http: Http) {
   }
 

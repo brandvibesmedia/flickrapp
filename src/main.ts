@@ -8,5 +8,4 @@ import { MaterialAppModule } from './app/app.module';
 if (environment.production) {
   enableProdMode();
 }
-
 platformBrowserDynamic().bootstrapModule(MaterialAppModule);
